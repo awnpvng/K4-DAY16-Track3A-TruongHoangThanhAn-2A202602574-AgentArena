@@ -5,6 +5,13 @@ __pycache__/
 .venv/
 venv/
 
+# This machine's `py` launcher mis-detects its own prefix ("Could not find
+# platform independent libraries <prefix>") and pip falls back to installing
+# packages into the CURRENT DIRECTORY instead of the real Python install.
+# Needed on disk for pytest to import; never part of the submission.
+Lib/
+Scripts/
+
 # Test + tooling caches
 .pytest_cache/
 .mypy_cache/
